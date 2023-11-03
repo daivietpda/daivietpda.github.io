@@ -1,0 +1,40 @@
+Thử nghiệm debian 12 và ubuntu  23.10 trên tanix w2 hoạt động ok . vfd hiển thị giờ và tần số cpu ... thử cài đặt home assistant supervised hoạt động tốt .
+link tanix w2 https://shope.ee/99xUbVJBXY
+link debian 12 Bookworm
+Debian Bookworm (v12) with Linux kernel 6.1.57
+Ubuntu Mantic (v23.10) with Linux kernel 6.1.57
+https://github.com/devmfc/debian-on-amlogic/releases
+
+Link cài đặt HA https://github.com/home-assistant/supervised-installer/
+CÀI ĐẶT CÁC GÓI CẦN THIẾT BAN ĐẦU
+apt install \
+apparmor \
+cifs-utils \
+curl \
+dbus \
+jq \
+libglib2.0-bin \
+lsb-release \
+network-manager \
+nfs-common \
+systemd-journal-remote \
+systemd-resolved \
+udisks2 \
+wget -y
+
+CÀI ĐẶT DOCKER 
+curl -fsSL get.docker.com | sh
+
+Step 3: Install the OS-Agent:
+wget https://github.com/home-assistant/os-agent/releases/download/1.6.0/os-agent_1.6.0_linux_aarch64.deb
+dpkg -i os-agent_1.6.0_linux_aarch64.deb
+
+Step 4: Install the Home Assistant Supervised Debian Package:
+
+wget -O homeassistant-supervised.deb https://github.com/home-assistant/supervised-installer/releases/latest/download/homeassistant-supervised.deb
+apt install ./homeassistant-supervised.deb
+
+
+cài đặt portainer
+docker pull portainer/portainer-ce:latest
+docker run -d -p 9000:9000 --restart always -v /var/run/docker.sock:/var/run/docker.sock portainer/portainer-ce:latest
