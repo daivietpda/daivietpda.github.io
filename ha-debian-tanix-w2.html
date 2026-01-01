@@ -32,7 +32,8 @@ dpkg -i os-agent_1.8.1_linux_aarch64.deb
 Step 4: Install the Home Assistant Supervised Debian Package:
 
 wget -O homeassistant-supervised.deb https://github.com/home-assistant/supervised-installer/releases/latest/download/homeassistant-supervised.deb
-BYPASS_OS_CHECK=true apt install ./homeassistant-supervised.deb
+mv homeassistant-supervised.deb /tmp/
+BYPASS_OS_CHECK=true apt install /tmp/homeassistant-supervised.deb
 
 
 anh chup man hinh cai dat add on https://github.com/daivietpda/daivietpda.github.io/blob/main/HA.PNG
