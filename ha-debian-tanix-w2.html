@@ -26,13 +26,13 @@ CÀI ĐẶT DOCKER
 curl -fsSL get.docker.com | sh
 
 Step 3: Install the OS-Agent:
-wget https://github.com/home-assistant/os-agent/releases/download/1.6.0/os-agent_1.6.0_linux_aarch64.deb
-dpkg -i os-agent_1.6.0_linux_aarch64.deb
+wget https://github.com/home-assistant/os-agent/releases/download/1.8.1/os-agent_1.8.1_linux_aarch64.deb
+dpkg -i os-agent_1.8.1_linux_aarch64.deb
 
 Step 4: Install the Home Assistant Supervised Debian Package:
 
 wget -O homeassistant-supervised.deb https://github.com/home-assistant/supervised-installer/releases/latest/download/homeassistant-supervised.deb
-apt install ./homeassistant-supervised.deb
+BYPASS_OS_CHECK=true apt install ./homeassistant-supervised.deb
 
 
 anh chup man hinh cai dat add on https://github.com/daivietpda/daivietpda.github.io/blob/main/HA.PNG
